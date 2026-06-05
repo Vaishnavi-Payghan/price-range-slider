@@ -1,7 +1,6 @@
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -11,6 +10,7 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    flex-direction: column;
 }
 
 .container{
@@ -20,22 +20,24 @@ body{
     padding: 20px;
     width: 600px;
     transition: transform 0.2s;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 .container:hover{
-    transform: scale(1.05);
+    transform: scale(0.7);
 }
 
-.project-title{
-    padding: 10px;
+.custom-wrapper{
+    margin: 0;
+    width: 70%;
+    padding: 0px 25px 40px;
+    position: relative;
+    left: 63px;
 }
 
 .title{
     color: purple;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
 }
 
 /* Styles for the Price input container */
@@ -45,26 +47,30 @@ body{
 
 .price{
     display: flex;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+    /* gap: 10px; */
+    margin-bottom: 22px;
 }
 
 span{
-    font-size: 18px;
-
+    font-size: 17px;
+     margin-right: 10px;
 }
 
 .price input{
-    width: 300px;
+    flex: 1;
     height: 35px;
-    border-radius: 5px;
-    background-color: lightgray;
+    border-radius: 9px;
+    background-color: #e4e4e4;
     border: none;
     text-align: center;
-    font-size: 17px;
+    font-size: 15px;
     font-weight: 500;
+}
+
+.price-input{
+    width: 100%;
 }
 
 /* Remove Arrows/Spinners */
@@ -75,7 +81,6 @@ input::-webkit-inner-spin-button {
 }
 
 .slider{
-    width: 100%;
     background: #e4e4e4;
     height: 6px;
     position: relative;
@@ -115,3 +120,30 @@ input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
 }
 
+@media screen and (max-width: 768px) {
+    .container {
+        width: 80%;
+        margin-right: 5px;
+    }
+
+    .custom-wrapper {
+        width: 100%;
+        left: 0;
+        padding: 0 10px;
+    }
+
+    .project-title {
+        width: 100%;
+        position: relative;
+        right: 26px;
+    }
+
+    .price-input {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .price {
+        margin-bottom: 10px;
+    }
+}
